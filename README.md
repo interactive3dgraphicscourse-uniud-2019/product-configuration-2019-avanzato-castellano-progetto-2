@@ -99,13 +99,13 @@ Alcune combinazioni:
 ### Interfaccia
 
 L'interfaccia grafica è molto essenziale e prevede il canvas per il rendering di Three.js a schermo pieno, con un menù laterale a scomparsa in cui è possibile selezionare i materiali ed eventualmente procedere con l'acquisto.
-<img src="screenshots/Configure.jpg" width="45%" alt="configure" />
-<img src="screenshots/Order.jpg" width="45%" alt="order" />
+<img src="screenshots/Configure.JPG" width="45%" alt="configure" />
+<img src="screenshots/Order.JPG" width="45%" alt="order" />
 
 Per arricchire l'esperienza dell'utente sono state aggiunte 3 funzionalità extra non richieste:
 - Possibilità di riportare il modello e la vista nella posizione originale con un bottone apposito, ad esempio dopo essersi avvicinati o aver ruotato il modello.
 - Possibilità di poter scattare una foto alla configurazione attuale e poterla salvare sul dispositivo.
 - Possibilità di vedere il modello in AR tramite webcam o fotocamera, dopo aver scaricato l'apposito marker.
-![snapshot](screenshots/Snapshot.jpg)
-![AR1](screenshots/AR1.jpg)
+![snapshot](screenshots/Snapshot.JPG)
+![AR1](screenshots/AR1.JPG)
 ![AR2](screenshots/AR2.jpg)
