@@ -63,16 +63,17 @@ Nel codice:
 
 Le textures utilizzate per i vari materiali (per comodità solo le componenti diffusive).
 - Tessuti:
-![fabric01](textures/fabric01/diff.jpg) ![fabric02](textures/fabric02/diff.jpg) ![fabric03](textures/fabric03/diff.jpg) ![fabric04](textures/fabric04/diff.jpg) ![fabric05](textures/fabric05/diff.jpg)
+
+![fabric01](textures/fabric01/diff.jpg = 200x200) ![fabric02](textures/fabric02/diff.jpg = 200x200) ![fabric03](textures/fabric03/diff.jpg = 200x200) ![fabric04](textures/fabric04/diff.jpg = 200x200) ![fabric05](textures/fabric05/diff.jpg = 200x200)
 
 - Pelli:
-![leather01](textures/leather01/diff.jpg) ![leather02](textures/leather02/diff.jpg)
+![leather01](textures/leather01/diff.jpg = 200x200) ![leather02](textures/leather02/diff.jpg = 200x200)
 
 - Metalli:
-![metal01](textures/metal01/diff.jpg) ![metal02](textures/metal02/diff.jpg) ![metal03](textures/metal03/diff.jpg)
+![metal01](textures/metal01/diff.jpg = 200x200) ![metal02](textures/metal02/diff.jpg = 200x200) ![metal03](textures/metal03/diff.jpg = 200x200)
 
 - Legni:
-![wood01](textures/wood01/diff.jpg) ![wood02](textures/wood02/diff.jpg)
+![wood01](textures/wood01/diff.jpg = 200x200) ![wood02](textures/wood02/diff.jpg = 200x200)
 
 ### Applicazione dei materiali
 
@@ -91,12 +92,12 @@ Alcune combinazioni:
 ### Interfaccia
 
 L'interfaccia grafica è molto essenziale e prevede il canvas per il rendering di Three.js a schermo pieno, con un menù laterale a scomparsa in cui è possibile selezionare i materiali ed eventualmente procedere con l'acquisto.
-![configure](screenshots/configure.jpg) ![order](screenshots/order.jpg)
+![configure](screenshots/Configure.JPG) ![order](screenshots/Order.JPG)
 
 Per arricchire l'esperienza dell'utente sono state aggiunte 3 funzionalità extra non richieste:
 - Possibilità di riportare il modello e la vista nella posizione originale con un bottone apposito, ad esempio dopo essersi avvicinati o aver ruotato il modello.
 - Possibilità di poter scattare una foto alla configurazione attuale e poterla salvare sul dispositivo.
 - Possibilità di vedere il modello in AR tramite webcam o fotocamera, dopo aver scaricato l'apposito marker.
-![snapshot](screenshots/snapshot.jpg)
-![AR1](screenshots/AR1.jpg)
-![AR2](screenshots/AR2.jpg)
+![snapshot](screenshots/Snapshot.JPG)
+![AR1](screenshots/AR1.JPG)
+![AR2](screenshots/AR2.JPG)
