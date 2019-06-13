@@ -1,81 +1,102 @@
-# ProductVisualization
+﻿# Product configuration
 
-![Image from Ford Configurator, developed in three.js](images/ford-configurator.jpg)
+Progetto di Avanzato Thomas e Castellano Astrid
 
-READ CAREFULLY this document BEFORE you start!
+## Il progetto
 
-## Prerequisites
+- Ci è stato chiesto di implementare un configuratore 3D per la visualizzazione di un modello tridimensionale con diversi materiali, in modo più realistico possibile. Si desidera che l'aspetto grafico di questo software ricordi un vero sito di e-commerce.
+- Lo shading può essere implementato "a mano" oppure si possono usare i materiali già forniti da Three.js, a patto di trovare quale funzione BRDF utilizzano, e riscriverla in modo formale (non algoritmico).
 
-- read carefully all slides and notes up to lecture 17 before you start. Try the proposed exercises. As you progress in the project, include also content from subsequent lectures.
+## Pre-requisiti
 
-## Hints
+- Saper utilizzare Three.js, importare modelli 3D, creare materiali.
+- Conoscere i concetti base di shading con textures e mappatura UV, le diverse mappe per lo shading (normal, AO, diffusive, specular, roughness, displacement...).
+- Conoscenza di base su illuminazione di prodotto.
+- Saper creare interfacce grafiche per il web (html, css, js...).
 
-- Try to work out a basic project which satisfies all requirements well before the deadline and as soon as possible: you will then use the remaining time to refine, improve and polish.
-- If you are stuck for too much time on a problem, ask for help, preferably in the forum.
-- the process is as important as the result. Use this project to learn a workflow, and how to use tools effectively. Experiment, and try to come up with efficient, elegant, and well commented code.
-- commit often in your git repository and with meaningful comments.
-- do not choose too complex products with many materials. 2-4 materials are enough.
+## Goals 
 
-
-## Goals
-
-The well-known ACME company has asked you to build a product **Web visualizer / configurator** for its new e-commerce site. Before giving you the job, ACME wants to evaluate how faithfully you can visualize and configure products.  ACME sells everything, so you can choose whatever kind of product you want for the demonstration.
-
-Your goal is to build a Web application (a HTML page) that:
-
-- visualizes a product in 3D using three.js, using PBR equations and materials;
-- allows the user to inspect the product (e.g. by orbiting the camera around it), and change some material on it by choosing from a few alternatives.
-
-Try to make it look like a simple, but real portion of an e-commerce site, not a three.js example: choose carefully colors, fonts, images, and icons, also taking inspiration from real web sites.
-
-## Steps (read CAREFULLY)
-
-3. Prepare, and add to the repository, a journal.md file for logging your progress and choices.
-
-1. Choose a product for which: (i) you can easily build a 3D model, or (ii) you can download a 3D model which you have the right to use in non-commercial applications. The model should not be too complex (not more than 100k vertices) and in some format that three.js can read. [Three.js examples](https://threejs.org/examples/) provide a list of loaders for different formats: beware that not all of them work perfectly, and you might have to try with different formats. Preferably, use GLTF, but any other format is ok.
-
-2. Design the lighting for the product. Products in web sites and catalogues are photographed using strategically placed lights that enhance details and shape. For example, [searching google images for product photography lighting](http://www.google.com/images?q=product+photography+lighting) will show you a number of real-world lighting setups that are used for products. In your lighting setup, you can use whatever you want, from punctual lights, to environment map, or light maps, or any combination of them.
-
-3. Design the PBR materials for the product. You can use PRB textures found anywhere, or produce them, e.g. with Substance Designer or B2M. If you use textures authored by someone else, just make sure you have the rights for using them in our context (non-commercial application). At least one of the materials must have 2-3 alternatives (e.g. different colors, or materials).
-
-4. Build the application that renders the chosen 3D model, with the designed lighting setup and materials, and an user interface for selecting the material between the alternatives. **Important: you can implement this step in two different ways**:
-
-    a. using three.js built-in lights and materials (MeshStandardMaterial or MeshPhysicalMaterial), without writing any shader. In this case, your final report **must include** the equations of the BRDF and rendering equations that you are using. In other words, you have to dig into three.js shaders to find which equations are used, and write them (in mathematical form, not using code);
-
-    b. using shaders written by you, e.g. by extending the shaders we saw in the classroom. In this case, your report needs just to mention the kind of BRDF / lights you have implemented (no need to report the equations, unless you are using different BRDF or adding some new equation).
-
-4. If possible, try to take into account implicit requirements as well. For example, you cannot use textures with file sizes of dozens of megabytes for a Web site; and also, your page should render at least at 30 fps on average smartphones. You will get bonus points for a result that could be deployed to a Web site with few or no modifications.
-
-5. Write a concise report by overwriting this file.
+- Creare un configuratore per applicare materiali realistici ad un oggetto 3D. Possibilmente materiali plausibili per il tipo di oggetto rappresentato (non auto di legno, sedie di carta ecc...).
+- Creare un'interfaccia intuitiva che permetta di applicare i vari materiali in modo semplice e chiaro.
+- Dare l'aspetto di un e-commerce professionale.
 
 ## Starting code
 
-There is no specific starting code for this project. If you choose to use your own shaders, choose from our examples the one that uses the lighting techniques you want to use, or combine from more examples for a specific set of techniques. If you want to use
-three.js built-in materials and lights, you can start from some three.js built-in example.
+- Per l'implementazione del progetto non è stato fornito alcun codice di partenza, abbiamo comunque a disposizione gli esempi del corso che coprono la quasi totalità degli argomenti.
 
-## Documenting and report
+## Steps 
 
-For project documentation and reporting, we use the [markdown format](https://daringfireball.net/projects/markdown/syntax), which is also the format of this document. Markdown is a lightweight markup language with plain text formatting syntax which is easy and quick to write, very human-readable, and that can be converted to HTML.
+1. Clonato il progetto di partenza della repository del docente.
+2. Progettazione dell'interfaccia e degli spazi designati alle varie attività nella pagina.
+3. Ricerca di un modello 3D da utilizzare
+4. Ricerca di materiali.
+5. Ricerca su illuminazione di prodotto.
+6. Costruzione della pagina con importazione del modello (momentaneamente senza materiali).
+7. Implementazione dinamica di rotazione del modello (con limitazioni su asse x, non ruota su z, possiede dell'inerzia).
+8. Aggiunta delle luci e posizionmento in modo coerente con il tipo di modello, in modo da illuminarlo il più uniformemente possibile.
+9. Creazione dei materiali utilizzando le textures PBR ottenute dal sito [cc0 textures](<http://www.cc0textures.com>) e [MeshStandardMaterial](<http://www.inf.u-szeged.hu/~tanacs/threejs/docs/#api/en/materials/MeshStandardMaterial>).
+10. Creazione del meccanismo di cambio dei materiali.
+11. Rifintura dell'interfaccia grafica, aggiunta di funzionalità extra (scattare una foto e poterla salvare, centrare la geometria e visualizzazione in AR).
+12. Individuazione della BRDF utilizzata nel codice sorgente di Three.js e riscrittura della stessa in forma matematica.
 
-If you need more features than the ones that markdown provides (e.g. writing equations), you can use one of its extensions called [markdeep](https://casual-effects.com/markdeep/).
+### Modello 3D
 
-You are required to document your project in two ways:
+Abbiamo utilizzato un modello 3D di una sedia disegnata da [Moroso](<https://moroso.it>) e gentilmente ceduta per uso accademico (si prega quindi di non scaricare ed utilizzare in nessun modo il modello).
+Dettagli del modello:
+- N vertici
+- ...
 
-- maintain a journal (in a file called journal.md) describing key design decisions, changes, bug symptoms and solutions, including screenshots.
-- create a report (by overwriting this file).
+### Luci
 
-The report should be as brief as possible while covering the following points:
+Le luci, di tipo spotlight, sono state posizionate nel seguente modo:
+![disposizione luci](screenshots/luci.png)
+ed hanno le seguenti proprietà:
+- ...
 
-- overall description: what your project is about and the files it uses.
-- results, including images of the scenes created, taken in a way that clearly illustrates that they satisfy the specification.
-- brief explanation of the process that you used to make your scene. Include tools, assets, and planning steps.
+### Materiali
 
-## Constraints
+Per questo progetto è stato usato il materiale [MeshStandardMaterial](<http://www.inf.u-szeged.hu/~tanacs/threejs/docs/#api/en/materials/MeshStandardMaterial>) di Three.js, di cui riportiamo la funzione BRDF, sia in forma matematica che algoritmica presente nel codice sorgente.
+Formalmente:
+![BRDF](screenshots/BRDF.png)
+Nel codice:
+![algoritmo BRDF](screenshots/algoritmo_brdf.jpg)
 
-If you use textures / 3D models / substances / ..., make sure that you have the rights to include them. For example, search for images that come with a [CC Attribution, ShareAlike or NonCommercial licences](https://creativecommons.org/share-your-work/licensing-types-examples/).
+Le textures utilizzate per i vari materiali (per comodità solo le componenti diffusive).
+- Tessuti:
+![fabric01](textures/fabric01/diff.jpg) ![fabric02](textures/fabric02/diff.jpg) ![fabric03](textures/fabric03/diff.jpg) ![fabric04](textures/fabric04/diff.jpg) ![fabric05](textures/fabric05/diff.jpg)
 
-In this project, you are allowed to re-use assets taken elsewhere, but **entirely copying** others' work, even with slight modifications, is forbidden and will have serious consequences beyond the deletion of your project. In any case, mention any source of inspiration in your journal and final report.
+- Pelli:
+![leather01](textures/leather01/diff.jpg) ![leather02](textures/leather02/diff.jpg)
 
-## Credits
+- Metalli:
+![metal01](textures/metal01/diff.jpg) ![metal02](textures/metal02/diff.jpg) ![metal03](textures/metal03/diff.jpg)
 
-The image above comes from a [Ford car configurator built in three.js](http://www.ford.com/cars/mustang/customizer/#!/customize).
+- Legni:
+![wood01](textures/wood01/diff.jpg) ![wood02](textures/wood02/diff.jpg)
+
+### Applicazione dei materiali
+
+Abbiamo reso possibile applicare diversi materiali a diverse parti della sedia:
+	- 5 tessuti e 2 tipi di pelle per la seduta.
+	- 3 metalli e 2 tipi di legno per braccioli e basamento, tra loro indipendenti.
+
+Alcune combinazioni:
+![Chair_0](screenshots/Chair_0.jpg)
+![Chair_1](screenshots/Chair_1.jpg)
+![Chair_2](screenshots/Chair_2.jpg)
+![Chair_3](screenshots/Chair_3.jpg)
+![Chair_4](screenshots/Chair_4.jpg)
+![Chair_5](screenshots/Chair_5.jpg)
+
+### Interfaccia
+
+L'interfaccia grafica è molto essenziale e prevede il canvas per il rendering di Three.js a schermo pieno, con un menù laterale a scomparsa in cui è possibile selezionare i materiali ed eventualmente procedere con l'acquisto.
+![configure](screenshots/configure.jpg) ![order](screenshots/order.jpg)
+
+Per arricchire l'esperienza dell'utente sono state aggiunte 3 funzionalità extra non richieste:
+- Possibilità di riportare il modello e la vista nella posizione originale con un bottone apposito, ad esempio dopo essersi avvicinati o aver ruotato il modello.
+- Possibilità di poter scattare una foto alla configurazione attuale e poterla salvare sul dispositivo.
+- Possibilità di vedere il modello in AR tramite webcam o fotocamera, dopo aver scaricato l'apposito marker.
+![snapshot](screenshots/snapshot.jpg)
+![AR1](screenshots/AR1.jpg)
+![AR2](screenshots/AR2.jpg)

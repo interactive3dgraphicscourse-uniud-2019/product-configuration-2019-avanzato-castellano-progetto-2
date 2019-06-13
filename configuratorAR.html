@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Product configurator</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="configurator-styleAR.css">
+	</head>
+
+	<body>
+
+		<section id="loading-screen">
+			<div id="loader"></div>
+		</section>
+
+		<div id="center-geometry" class="button">
+			<div class="button-description"><p>Center</p></div>
+		</div>
+		
+		<div id="snapshot-trigger" class="button">
+			<div class="button-description"><p>Snapshot</p></div>
+		</div>
+
+		<div id="ar-start" class="button">
+			<div class="button-description"><p>AR</p></div>
+		</div>
+
+		<div id="ar-stop" class="button hidden"></div>
+
+		<div id="snapshot" class="hidden">
+			<div class="flash"></div>
+			<img id="snapshot-image" src="">
+			<div id="snapshot-downloader" class="button"></div>
+		</div>
+
+		<div id="controls-container">
+			<div id="arrow-opener" class="right"></div>
+			<div id="controls-menu">
+				<ul>
+					<li id="configure-button" class="section-active">Configure</li>
+					<li id="order-button">Order</li>
+				</ul>
+			</div>
+			<div id="materials">
+				<div id="materials-scroller">
+					<h2>Sit</h2><div id="sit-materials-container"></div>
+					<h2>Arms</h2><div id="arms-materials-container"></div>
+					<h2>Base</h2><div id="base-materials-container"></div>
+				</div>
+			</div>
+			<div id="order">
+				<div id="order-scroller">
+
+					<h2>Details</h2>
+					<div class="data-entry">
+						<p>Quantity</p>
+						<input type="number" name="quantity">
+					</div>
+					<div class="data-entry">
+						<p>Expedition</p>
+						<select>
+							<option value="standard" selected="selected">Standard</option>
+							<option value="fast">Fast</option>
+							<option value="express">Express</option>
+						</select>
+					</div>
+
+					<h2>Your data</h2>
+					<div class="data-entry">
+						<p>Firstname</p>
+						<input type="text" name="firstname">
+					</div>
+					<div class="data-entry">
+						<p>Lastname</p>
+						<input type="text" name="lastname">
+					</div>
+					<div class="data-entry">
+						<p>Genre</p>
+						<select>
+							<option value="M" selected="selected">M</option>
+							<option value="F">F</option>
+						</select>
+					</div>
+					<div class="data-entry">
+						<p>Address</p>
+						<input type="text" name="address">
+					</div>
+					<div class="data-entry">
+						<p>Company name</p>
+						<input type="text" name="company">
+					</div>
+				</div>
+
+				<div id="confirm-order">
+					<button onclick="alert('Good choice! Thank you for purchasing at acme.com');">Buy</button>
+				</div>
+			</div>
+		</div>
+
+		<video autoplay controls id="hiddenVideo" style="display:hidden"></video> 
+		<canvas id="hiddenCanvas" style="display:hidden"></canvas>
+		<canvas id="drawingCanvas" style="display:hidden"></canvas>
+		
+		<div id="ar-container" class="hidden">
+			<canvas id="outCanvas"></canvas>
+		</div>
+
+		<div id="confirm-container" class="hidden">
+			<div id="confirm">
+				<p id="confirm-title"></p>
+				<p id="confirm-message"></p>
+				<div id="confirm-buttons">
+					<button id="confirm-ok-button" class="confirm-button"></button>
+					<button id="confirm-cancel-button" class="confirm-button"></button>
+				</div>
+			</div>
+		</div>
+
+		<script type='text/javascript' src="js/three/three.min.js"></script>
+		<script type='text/javascript' src="js/three/loaders/DDSLoader.js"></script>
+		<script type='text/javascript' src="js/three/loaders/MTLLoader.js"></script>
+		<script type='text/javascript' src="js/three/loaders/OBJLoader.js"></script>
+		<script type='text/javascript' src="js/three/loaders/ColladaLoader.js"></script>
+		<script type='text/javascript' src="js/three/utils/BufferGeometryUtils.js"></script>
+		<script type='text/javascript' src="js/three/libs/stats.min.js"></script>
+		<script type='text/javascript' src="js/three/libs/dat.gui.min.js"></script>
+
+		<script type='text/javascript' src="js/jquery-1.11.1.min.js"></script>
+		<script type='text/javascript' src="js/JSARToolKit.min.js"></script> 
+
+		<script type='text/javascript' src="configuratorAR.js"></script>
+
+	</body>
+</html>
