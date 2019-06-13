@@ -118,12 +118,18 @@ L'interfaccia grafica è molto essenziale e prevede il canvas per il rendering d
 <img src="screenshots/Order.JPG" alt="order" />
 
 
+### Funzionalità extra
+
 Per arricchire l'esperienza dell'utente sono state aggiunte 3 funzionalità extra non richieste:
 - Possibilità di riportare il modello e la vista nella posizione originale con un bottone apposito, ad esempio dopo essersi avvicinati o aver ruotato il modello.
 - Possibilità di poter scattare una foto alla configurazione attuale e poterla salvare sul dispositivo.
 - Possibilità di vedere il modello in AR tramite webcam o fotocamera, dopo aver scaricato l'apposito marker.
 
+Snapshot
+
 ![snapshot](screenshots/Snapshot.JPG)
+
+Augmented reality
 
 ![AR1](screenshots/AR1.JPG)
 
