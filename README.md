@@ -63,17 +63,24 @@ Nel codice:
 
 Le textures utilizzate per i vari materiali (per comodità solo le componenti diffusive).
 - Tessuti:
+<img src="textures/fabric01/diff.jpg" width="200" height="200" alt="fabric01" />
+<img src="textures/fabric02/diff.jpg" width="200" height="200" alt="fabric02" />
+<img src="textures/fabric03/diff.jpg" width="200" height="200" alt="fabric03" />
+<img src="textures/fabric04/diff.jpg" width="200" height="200" alt="fabric04" />
+<img src="textures/fabric05/diff.jpg" width="200" height="200" alt="fabric05" />
 
-![fabric01](textures/fabric01/diff.jpg = 200x200) ![fabric02](textures/fabric02/diff.jpg = 200x200) ![fabric03](textures/fabric03/diff.jpg = 200x200) ![fabric04](textures/fabric04/diff.jpg = 200x200) ![fabric05](textures/fabric05/diff.jpg = 200x200)
+- Pelli
+<img src="textures/leather01/diff.jpg" width="200" height="200" alt="leather01" />
+<img src="textures/leather02/diff.jpg" width="200" height="200" alt="leather02" />
 
-- Pelli:
-![leather01](textures/leather01/diff.jpg = 200x200) ![leather02](textures/leather02/diff.jpg = 200x200)
+- Metalli
+<img src="textures/metal01/diff.jpg" width="200" height="200" alt="metal01" />
+<img src="textures/metal02/diff.jpg" width="200" height="200" alt="metal02" />
+<img src="textures/metal03/diff.jpg" width="200" height="200" alt="metal03" />
 
-- Metalli:
-![metal01](textures/metal01/diff.jpg = 200x200) ![metal02](textures/metal02/diff.jpg = 200x200) ![metal03](textures/metal03/diff.jpg = 200x200)
-
-- Legni:
-![wood01](textures/wood01/diff.jpg = 200x200) ![wood02](textures/wood02/diff.jpg = 200x200)
+- Legni
+<img src="textures/wood01/diff.jpg" width="200" height="200" alt="wood01" />
+<img src="textures/wood02/diff.jpg" width="200" height="200" alt="wood02" />
 
 ### Applicazione dei materiali
 
@@ -92,12 +99,13 @@ Alcune combinazioni:
 ### Interfaccia
 
 L'interfaccia grafica è molto essenziale e prevede il canvas per il rendering di Three.js a schermo pieno, con un menù laterale a scomparsa in cui è possibile selezionare i materiali ed eventualmente procedere con l'acquisto.
-![configure](screenshots/Configure.JPG) ![order](screenshots/Order.JPG)
+<img src="screenshots/Configure.jpg" width="45%" alt="configure" />
+<img src="screenshots/Order.jpg" width="45%" alt="order" />
 
 Per arricchire l'esperienza dell'utente sono state aggiunte 3 funzionalità extra non richieste:
 - Possibilità di riportare il modello e la vista nella posizione originale con un bottone apposito, ad esempio dopo essersi avvicinati o aver ruotato il modello.
 - Possibilità di poter scattare una foto alla configurazione attuale e poterla salvare sul dispositivo.
 - Possibilità di vedere il modello in AR tramite webcam o fotocamera, dopo aver scaricato l'apposito marker.
-![snapshot](screenshots/Snapshot.JPG)
-![AR1](screenshots/AR1.JPG)
-![AR2](screenshots/AR2.JPG)
+![snapshot](screenshots/Snapshot.jpg)
+![AR1](screenshots/AR1.jpg)
+![AR2](screenshots/AR2.jpg)
