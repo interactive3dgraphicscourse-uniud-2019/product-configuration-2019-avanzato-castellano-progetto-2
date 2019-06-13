@@ -147,9 +147,13 @@ Augmented reality
 
 ## Problemi riscontrati
 - La centratura del modello si comporta in modo inaspettato per alcune rotazioni (negative minori di -PI).
+	- **Motivo**: il valore di rotazione di un oggetto in Three.js è espresso in float, e può essere positivo o negativo. Per cui, ad una stessa rotazione possono corrispondere più valori diversi (ad esempio 90 gradi sono anche -270 gradi).
+	- **Causa**: impostazione errata dei controlli sui valori di rotazione. Ho cercato di modulare il valore di rotazione nell'intervallo [-PI, PI], ma in alcuni casi si eccede da tale range (problema ancora da risolvere).
+	- **Soluzione**: esprimere la rotazione solo nell'intervallo [-PI, PI] (non interessa sapere che l'oggetto ha compiuto più giri, ma solo la sua posizione finale attorno all'asse di rotazione).
 - Dopo vari cambi di materiale e utilizzo dell'applicativo (per un tempo maggiore di circa 10 min) si termina la memoria riservata dal browser.
-	- **Causa**: i frame vecchi vengono mantenuti dopo essere stati visualizzati, grazie al comando
-	```javascript
-	preserveDrawingBuffer: true
-	```
-	Ciò è necessario se voglio scattare una istantanea mentre sto configurando, e lo posso fare solo evitando di scartare i frame una volta visualizzati.
+	- **Causa**: i frame vecchi vengono mantenuti dopo essere stati visualizzati, grazie al comando nel renderer:
+		```javascript
+		preserveDrawingBuffer: true
+		```
+		Ciò è necessario se voglio scattare una istantanea mentre sto configurando, e lo posso fare solo evitando di scartare i frame una volta visualizzati.
+	- **Possibile soluzione**: trovare un meccanismo per svuotare periodicamente il buffer del renderer (da verificare).
