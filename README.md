@@ -39,21 +39,27 @@ Progetto di Avanzato Thomas e Castellano Astrid
 11. Rifintura dell'interfaccia grafica, aggiunta di funzionalità extra (scattare una foto e poterla salvare, centrare la geometria e visualizzazione in AR).
 12. Individuazione della BRDF utilizzata nel codice sorgente di Three.js e riscrittura della stessa in forma matematica.
 
-### Modello 3D
+___
+
+## Modello 3D
 
 Abbiamo utilizzato un modello 3D di una sedia disegnata da [Moroso](<https://moroso.it>) e gentilmente ceduta per uso accademico (si prega quindi di non scaricare ed utilizzare in nessun modo il modello).
 Dettagli del modello:
 - N vertici
 - ...
 
-### Luci
+___
+
+## Luci
 
 Le luci, di tipo spotlight, sono state posizionate nel seguente modo:
 ![disposizione luci](screenshots/luci.png)
 ed hanno le seguenti proprietà:
 - ...
 
-### Materiali
+___
+
+## Materiali
 
 Per questo progetto è stato usato il materiale [MeshStandardMaterial](<http://www.inf.u-szeged.hu/~tanacs/threejs/docs/#api/en/materials/MeshStandardMaterial>) di Three.js, di cui riportiamo la funzione BRDF, sia in forma matematica che algoritmica presente nel codice sorgente.
 Formalmente:
@@ -87,8 +93,9 @@ Legni
 <img src="textures/wood01/diff.jpg" width="150" height="150" alt="wood01"/><!--
 --><img src="textures/wood02/diff.jpg" width="150" height="150" alt="wood02"/>
 
+___
 
-### Applicazione dei materiali
+## Applicazione dei materiali
 
 Abbiamo reso possibile applicare diversi materiali a diverse parti della sedia:
 - 5 tessuti e 2 tipi di pelle per la seduta.
@@ -108,6 +115,7 @@ Alcune combinazioni:
 
 ![Chair_5](screenshots/Chair_5.jpg)
 
+___
 
 ### Interfaccia
 
@@ -117,8 +125,9 @@ L'interfaccia grafica è molto essenziale e prevede il canvas per il rendering d
 
 <img src="screenshots/Order.JPG" alt="order" />
 
+___
 
-### Funzionalità extra
+## Funzionalità extra
 
 Per arricchire l'esperienza dell'utente sono state aggiunte 3 funzionalità extra non richieste:
 - Possibilità di riportare il modello e la vista nella posizione originale con un bottone apposito, ad esempio dopo essersi avvicinati o aver ruotato il modello.
