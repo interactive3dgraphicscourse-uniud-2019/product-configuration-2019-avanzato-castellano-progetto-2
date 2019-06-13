@@ -39,7 +39,6 @@ Progetto di Avanzato Thomas e Castellano Astrid
 11. Rifintura dell'interfaccia grafica, aggiunta di funzionalità extra (scattare una foto e poterla salvare, centrare la geometria e visualizzazione in AR).
 12. Individuazione della BRDF utilizzata nel codice sorgente di Three.js e riscrittura della stessa in forma matematica.
 
-___
 
 ## Modello 3D
 
@@ -48,7 +47,6 @@ Dettagli del modello:
 - N vertici
 - ...
 
-___
 
 ## Luci
 
@@ -57,7 +55,6 @@ Le luci, di tipo spotlight, sono state posizionate nel seguente modo:
 ed hanno le seguenti proprietà:
 - ...
 
-___
 
 ## Materiali
 
@@ -93,7 +90,6 @@ Legni
 <img src="textures/wood01/diff.jpg" width="150" height="150" alt="wood01"/><!--
 --><img src="textures/wood02/diff.jpg" width="150" height="150" alt="wood02"/>
 
-___
 
 ## Applicazione dei materiali
 
@@ -115,9 +111,8 @@ Alcune combinazioni:
 
 ![Chair_5](screenshots/Chair_5.jpg)
 
-___
 
-### Interfaccia
+## Interfaccia
 
 L'interfaccia grafica è molto essenziale e prevede il canvas per il rendering di Three.js a schermo pieno, con un menù laterale a scomparsa in cui è possibile selezionare i materiali ed eventualmente procedere con l'acquisto.
 
@@ -125,7 +120,6 @@ L'interfaccia grafica è molto essenziale e prevede il canvas per il rendering d
 
 <img src="screenshots/Order.JPG" alt="order" />
 
-___
 
 ## Funzionalità extra
 
