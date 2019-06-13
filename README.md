@@ -137,3 +137,10 @@ Augmented reality
 ![AR1](screenshots/AR1.JPG)
 
 ![AR2](screenshots/AR2.JPG)
+
+## Tecnologie utilizzate
+- HTML per la creazione della pagina, dei canvas per il rendering e la reltà aumentata.
+- CSS per gli stili grafici (senza librerie o framework).
+- Javascript per le funzionalità come ascoltatori di eventi, creazione di elementi dinamici nel DOM, possibilità di scaricare il frame "fotografato".
+- Three.js per la parte 3D.
+- JsARToolkit per il tracking del marker nella realtà aumentata.
