@@ -91,8 +91,8 @@ Legni
 ### Applicazione dei materiali
 
 Abbiamo reso possibile applicare diversi materiali a diverse parti della sedia:
-	- 5 tessuti e 2 tipi di pelle per la seduta.
-	- 3 metalli e 2 tipi di legno per braccioli e basamento, tra loro indipendenti.
+- 5 tessuti e 2 tipi di pelle per la seduta.
+- 3 metalli e 2 tipi di legno per braccioli e basamento, tra loro indipendenti.
 
 Alcune combinazioni:
 
