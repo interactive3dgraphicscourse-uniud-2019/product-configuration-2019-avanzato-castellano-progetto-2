@@ -63,24 +63,24 @@ Nel codice:
 
 Le textures utilizzate per i vari materiali (per comodità solo le componenti diffusive).
 - Tessuti:
-<img src="textures/fabric01/diff.jpg" width="200" height="200" alt="fabric01" />
-<img src="textures/fabric02/diff.jpg" width="200" height="200" alt="fabric02" />
-<img src="textures/fabric03/diff.jpg" width="200" height="200" alt="fabric03" />
-<img src="textures/fabric04/diff.jpg" width="200" height="200" alt="fabric04" />
-<img src="textures/fabric05/diff.jpg" width="200" height="200" alt="fabric05" />
+<img src="textures/fabric01/diff.jpg" width="200" height="200" alt="fabric01" style="display:inline-block"/>
+<img src="textures/fabric02/diff.jpg" width="200" height="200" alt="fabric02" style="display:inline-block"/>
+<img src="textures/fabric03/diff.jpg" width="200" height="200" alt="fabric03" style="display:inline-block"/>
+<img src="textures/fabric04/diff.jpg" width="200" height="200" alt="fabric04" style="display:inline-block"/>
+<img src="textures/fabric05/diff.jpg" width="200" height="200" alt="fabric05" style="display:inline-block"/>
 
 - Pelli
-<img src="textures/leather01/diff.jpg" width="200" height="200" alt="leather01" />
-<img src="textures/leather02/diff.jpg" width="200" height="200" alt="leather02" />
+<img src="textures/leather01/diff.jpg" width="200" height="200" alt="leather01" style="display:inline-block"/>
+<img src="textures/leather02/diff.jpg" width="200" height="200" alt="leather02" style="display:inline-block"/>
 
 - Metalli
-<img src="textures/metal01/diff.jpg" width="200" height="200" alt="metal01" />
-<img src="textures/metal02/diff.jpg" width="200" height="200" alt="metal02" />
-<img src="textures/metal03/diff.jpg" width="200" height="200" alt="metal03" />
+<img src="textures/metal01/diff.jpg" width="200" height="200" alt="metal01" style="display:inline-block"/>
+<img src="textures/metal02/diff.jpg" width="200" height="200" alt="metal02" style="display:inline-block"/>
+<img src="textures/metal03/diff.jpg" width="200" height="200" alt="metal03" style="display:inline-block"/>
 
 - Legni
-<img src="textures/wood01/diff.jpg" width="200" height="200" alt="wood01" />
-<img src="textures/wood02/diff.jpg" width="200" height="200" alt="wood02" />
+<img src="textures/wood01/diff.jpg" width="200" height="200" alt="wood01" style="display:inline-block"/>
+<img src="textures/wood02/diff.jpg" width="200" height="200" alt="wood02" style="display:inline-block"/>
 
 ### Applicazione dei materiali
 
@@ -89,23 +89,32 @@ Abbiamo reso possibile applicare diversi materiali a diverse parti della sedia:
 	- 3 metalli e 2 tipi di legno per braccioli e basamento, tra loro indipendenti.
 
 Alcune combinazioni:
+
 ![Chair_0](screenshots/Chair_0.jpg)
+
 ![Chair_1](screenshots/Chair_1.jpg)
+
 ![Chair_2](screenshots/Chair_2.jpg)
+
 ![Chair_3](screenshots/Chair_3.jpg)
+
 ![Chair_4](screenshots/Chair_4.jpg)
+
 ![Chair_5](screenshots/Chair_5.jpg)
 
 ### Interfaccia
 
 L'interfaccia grafica è molto essenziale e prevede il canvas per il rendering di Three.js a schermo pieno, con un menù laterale a scomparsa in cui è possibile selezionare i materiali ed eventualmente procedere con l'acquisto.
-<img src="screenshots/Configure.JPG" width="45%" alt="configure" />
-<img src="screenshots/Order.JPG" width="45%" alt="order" />
+<img src="screenshots/Configure.JPG" width="50%" alt="configure" />
+<img src="screenshots/Order.JPG" width="50%" alt="order" />
 
 Per arricchire l'esperienza dell'utente sono state aggiunte 3 funzionalità extra non richieste:
 - Possibilità di riportare il modello e la vista nella posizione originale con un bottone apposito, ad esempio dopo essersi avvicinati o aver ruotato il modello.
 - Possibilità di poter scattare una foto alla configurazione attuale e poterla salvare sul dispositivo.
 - Possibilità di vedere il modello in AR tramite webcam o fotocamera, dopo aver scaricato l'apposito marker.
+
 ![snapshot](screenshots/Snapshot.JPG)
+
 ![AR1](screenshots/AR1.JPG)
+
 ![AR2](screenshots/AR2.JPG)
