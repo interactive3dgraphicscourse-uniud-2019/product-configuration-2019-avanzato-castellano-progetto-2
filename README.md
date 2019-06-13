@@ -108,4 +108,4 @@ Per arricchire l'esperienza dell'utente sono state aggiunte 3 funzionalità extr
 - Possibilità di vedere il modello in AR tramite webcam o fotocamera, dopo aver scaricato l'apposito marker.
 ![snapshot](screenshots/Snapshot.JPG)
 ![AR1](screenshots/AR1.JPG)
-![AR2](screenshots/AR2.jpg)
+![AR2](screenshots/AR2.JPG)
