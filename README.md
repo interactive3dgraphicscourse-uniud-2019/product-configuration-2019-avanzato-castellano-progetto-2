@@ -139,8 +139,17 @@ Augmented reality
 ![AR2](screenshots/AR2.JPG)
 
 ## Tecnologie utilizzate
-- HTML per la creazione della pagina, dei canvas per il rendering e la reltà aumentata.
-- CSS per gli stili grafici (senza librerie o framework).
-- Javascript per le funzionalità come ascoltatori di eventi, creazione di elementi dinamici nel DOM, possibilità di scaricare il frame "fotografato".
-- Three.js per la parte 3D.
-- JsARToolkit per il tracking del marker nella realtà aumentata.
+- **HTML** per la creazione della pagina, dei canvas per il rendering e la reltà aumentata.
+- **CSS** per gli stili grafici (senza librerie o framework).
+- **Javascript** per le funzionalità come ascoltatori di eventi, creazione di elementi dinamici nel DOM, possibilità di scaricare il frame "fotografato".
+- **Three.js** per la parte 3D.
+- **JsARToolkit** per il tracking del marker nella realtà aumentata.
+
+## Problemi riscontrati
+- La centratura del modello si comporta in modo inaspettato per alcune rotazioni (negative minori di -PI).
+- Dopo vari cambi di materiale e utilizzo dell'applicativo (per un tempo maggiore di circa 10 min) si termina la memoria riservata dal browser.
+	- **Causa**: i frame vecchi vengono mantenuti dopo essere stati visualizzati, grazie al comando
+	```javascript
+	preserveDrawingBuffer: true
+	```
+	Ciò è necessario se voglio scattare una istantanea mentre sto configurando, e lo posso fare solo evitando di scartare i frame una volta visualizzati.
