@@ -65,27 +65,27 @@ Le textures utilizzate per i vari materiali (per comodità solo le componenti di
 
 Tessuti
 
-<img src="textures/fabric01/diff.jpg" width="150" height="150" alt="fabric01"/>
-<img src="textures/fabric02/diff.jpg" width="150" height="150" alt="fabric02"/>
-<img src="textures/fabric03/diff.jpg" width="150" height="150" alt="fabric03"/>
-<img src="textures/fabric04/diff.jpg" width="150" height="150" alt="fabric04"/>
-<img src="textures/fabric05/diff.jpg" width="150" height="150" alt="fabric05"/>
+<img src="textures/fabric01/diff.jpg" width="150" height="150" alt="fabric01"/><!--
+--><img src="textures/fabric02/diff.jpg" width="150" height="150" alt="fabric02"/><!--
+--><img src="textures/fabric03/diff.jpg" width="150" height="150" alt="fabric03"/><!--
+--><img src="textures/fabric04/diff.jpg" width="150" height="150" alt="fabric04"/><!--
+--><img src="textures/fabric05/diff.jpg" width="150" height="150" alt="fabric05"/>
 
 Pelli
 
-<img src="textures/leather01/diff.jpg" width="150" height="150" alt="leather01"/>
-<img src="textures/leather02/diff.jpg" width="150" height="150" alt="leather02"/>
+<img src="textures/leather01/diff.jpg" width="150" height="150" alt="leather01"/><!--
+--><img src="textures/leather02/diff.jpg" width="150" height="150" alt="leather02"/>
 
 Metalli
 
-<img src="textures/metal01/diff.jpg" width="150" height="150" alt="metal01"/>
-<img src="textures/metal02/diff.jpg" width="150" height="150" alt="metal02"/>
-<img src="textures/metal03/diff.jpg" width="150" height="150" alt="metal03"/>
+<img src="textures/metal01/diff.jpg" width="150" height="150" alt="metal01"/><!--
+--><img src="textures/metal02/diff.jpg" width="150" height="150" alt="metal02"/><!--
+--><img src="textures/metal03/diff.jpg" width="150" height="150" alt="metal03"/>
 
 Legni
 
-<img src="textures/wood01/diff.jpg" width="150" height="150" alt="wood01"/>
-<img src="textures/wood02/diff.jpg" width="150" height="150" alt="wood02"/>
+<img src="textures/wood01/diff.jpg" width="150" height="150" alt="wood01"/><!--
+--><img src="textures/wood02/diff.jpg" width="150" height="150" alt="wood02"/>
 
 
 ### Applicazione dei materiali
