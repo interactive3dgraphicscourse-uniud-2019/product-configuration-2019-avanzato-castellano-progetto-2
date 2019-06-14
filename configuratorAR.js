@@ -42,6 +42,7 @@ $(document).ready(function() {
 	var roughnessMap = null;
 	var displacementMap = null;
 
+	// Materials available for the sit
 	const sitPreviews = {
 		fabric01: { name: "printed fabric", image: "textures/fabric01/diff.jpg" },
 		fabric02: { name: "grey fabric", image: "textures/fabric02/diff.jpg" },
@@ -52,6 +53,7 @@ $(document).ready(function() {
 		leather02: { name: "flat beige leather", image: "textures/leather02/diff.jpg" },
 	}
 
+	// Materials available for the base
 	const basePreviews = {
 		metal01: { name: "regular dark metal", image: "textures/metal01/diff.jpg" },
 		metal02: { name: "grey flat metal", image: "textures/metal02/diff.jpg" },
@@ -60,6 +62,7 @@ $(document).ready(function() {
 		wood02: { name: "flat polar wood", image: "textures/wood02/diff.jpg" },
 	}
 
+	// Materials available for the arms
 	const armsPreviews = {
 		metal01: { name: "regular dark metal", image: "textures/metal01/diff.jpg" },
 		metal02: { name: "grey flat metal", image: "textures/metal02/diff.jpg" },
@@ -68,6 +71,7 @@ $(document).ready(function() {
 		wood02: { name: "flat polar wood", image: "textures/wood02/diff.jpg" },
 	}
 
+	// Declaration of all materials
 	const materials = {
 
 		fabric01: { path: "textures/fabric01/", type: "fabric", repetitions: 4 },
@@ -90,6 +94,7 @@ $(document).ready(function() {
 
 	function init() {
 
+		// Main container of three.js output
 		container = document.createElement( 'div' );
 		container.id = "main-canvas";
 		container.style.position = "fixed";
@@ -97,6 +102,7 @@ $(document).ready(function() {
 		container.style.left = "0";
 		document.body.appendChild( container );
 
+		// Camera
 		camera = new THREE.PerspectiveCamera(
 			45,
 			window.innerWidth / window.innerHeight,
@@ -108,6 +114,7 @@ $(document).ready(function() {
 		camera.position.y = 5;
 		camera.lookAt( new THREE.Vector3(2,5,0) );
 
+		// Load marker image
 		let loader = new THREE.ImageLoader();
 		loader.load("js/0.png",
 			(image) => marker = image,
@@ -122,17 +129,17 @@ $(document).ready(function() {
 		let baseMaterialsSelector = document.getElementById("base-materials-container");
 		let armsMaterialsSelector = document.getElementById("arms-materials-container");
 
-		// Creating preview icons for materials
+		// Creating sit materialselectors
 		Object.entries(sitPreviews).map((material, index) => {
 			sitMaterialsSelector.appendChild( createTexturePreview( SIT, material, index ));
 		});
 
-		// Creating preview icons for materials
+		// Creating base material selectors
 		Object.entries(basePreviews).map((material, index) => {
 			baseMaterialsSelector.appendChild( createTexturePreview( BASE, material, index ));
 		});
 
-		// Creating preview icons for materials
+		// Creating arms material selectors
 		Object.entries(armsPreviews).map((material, index) => {
 			armsMaterialsSelector.appendChild( createTexturePreview( ARMS, material, index ));
 		});
@@ -254,6 +261,7 @@ $(document).ready(function() {
 
 		// ---------------------------------------------------------------------------
 		
+		// Renderer with drawing preservation
 		renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
 		renderer.setPixelRatio( window.devicePixelRatio );
 		renderer.setSize( window.innerWidth, window.innerHeight );
@@ -309,11 +317,11 @@ $(document).ready(function() {
 		container.addEventListener('DOMMouseScroll', wheelZoom, false);
 		window.addEventListener( 'resize', onWindowResize, false );
 
-		// Snapshot
+		// Snapshot listeners
 		document.getElementById("snapshot-downloader").addEventListener('click', saveAsImage);
 		document.getElementById("snapshot-trigger").addEventListener('click', snapshot);
 
-		// Arrow click
+		// Arrow click toggle menu
 		const arrowOpener = document.getElementById("arrow-opener");
 		arrowOpener.addEventListener('click', function(e) {
 			const materials = document.getElementById("controls-container");
@@ -326,8 +334,11 @@ $(document).ready(function() {
 			}
 		});
 
-		// Sections navigation
+		// Section navigation menù
 		let configureButton = document.getElementById("configure-button");
+		let orderButton = document.getElementById("order-button");
+
+		// When clicking "configure", slide in configure section
 		configureButton.addEventListener('click', function() {
 			configureButton.className = "section-active";
 			orderButton.className = "";
@@ -337,7 +348,7 @@ $(document).ready(function() {
 			materials.style.right = "0";
 		});
 
-		let orderButton = document.getElementById("order-button");
+		// When clicking "order", slide in order section
 		orderButton.addEventListener('click', function() {
 			orderButton.className = "section-active";
 			configureButton.className = "";
@@ -354,6 +365,7 @@ $(document).ready(function() {
 		// AR start button
 		const arStart = document.getElementById("ar-start");
 		arStart.addEventListener('click', () => {
+			// Before start AR tell user that he will need the marker
 			confirmBox(
 			"You must need the marker for AR experience",
 			"Please download it and print",
@@ -368,6 +380,7 @@ $(document).ready(function() {
 		arStop.addEventListener('click', stopAR);
 	}
 
+	// Assign the current frame as src of snapshot-image element
 	function snapshot() {
 		let container = document.getElementById("snapshot");
 		let snapshot = document.getElementById("snapshot-image");
@@ -380,9 +393,11 @@ $(document).ready(function() {
         flash();
 
         snapshot.src = imgData;
+        // Remove class "hidden"
         container.className = "";
 	}
 
+	// Set image name and type before trigger the download
 	function saveAsImage() {
         var imgData, imgNode;
         try {
@@ -398,14 +413,19 @@ $(document).ready(function() {
         }
     }
 
+    // Create a link pointing the image
+    // automatically click it to trigger the download
+    // then remove the link
     var saveFile = function (strData, filename) {
         var link = document.createElement('a');
         if (typeof link.download === 'string') {
-            document.body.appendChild(link); //Firefox requires the link to be in the body
+        	//Firefox requires the link to be in the body
+            document.body.appendChild(link);
             link.download = filename;
             link.href = strData;
             link.click();
-            document.body.removeChild(link); //remove the link when done
+            //remove the link when done
+            document.body.removeChild(link);
             snapshot_seq_number++;
         } else {
             location.replace(uri);
@@ -424,8 +444,10 @@ $(document).ready(function() {
 		return texture;
 	}
 
+	// Create and return a new material
 	function createMaterial(path, type, repetitions) {
 
+		// Wood and metal does not need displacement
 		if (type !== "metal" && type !== "wood") {
 			displacementMap = loadTexture( path + "disp.jpg", repetitions );
 		} else {
@@ -448,63 +470,71 @@ $(document).ready(function() {
 
 	}
 
+	// Create a single material selector with material name and a preview image
 	function createTexturePreview( part, material, index ) {
+
+		// Material selector container
 		let container = document.createElement("div");
 		container.className = "material-container";
 
+		// Title of the material
 		let title = document.createElement("p");
 		title.innerText = material[1].name;
 		title.className = (index == 0) ? "material-name selected" : "material-name";
 
-		let div = document.createElement("div");
+		// Rounded image preview
+		let preview = document.createElement("div");
 		const url = material[1].image;
-		div.className = (index == 0) ? "material-preview selected" : "material-preview";
-		div.style.backgroundImage = "url('" + url + "')";
-		div.style.backgroundSize = "cover";
+		preview.className = (index == 0) ? "material-preview selected" : "material-preview";
+		preview.style.backgroundImage = "url('" + url + "')";
+		preview.style.backgroundSize = "cover";
 
+		// Change material when click on the material name
 		title.onclick = () => {
 			changeTexture(part, materials[material[0]]);
-			changeSelection(part, div, title);
+			changeSelection(part, preview, title);
 		};
 
-		div.onclick = () => {
+		// Change material when click on the material preview image
+		preview.onclick = () => {
 			changeTexture(part, materials[material[0]]);
-			changeSelection(part, div, title);
+			changeSelection(part, preview, title);
 		};
 
 		container.appendChild(title);
-		container.appendChild(div);
+		container.appendChild(preview);
 
 		return container;
 	}
 
+	// Change class for define selected element
 	function changeSelection(part, div, title) {
+
+		// Find the parent container
 		let container;
 		switch (part) {
-			case SIT:
-				container = document.getElementById("sit-materials-container");
-				break;
-			case BASE:
-				container = document.getElementById("base-materials-container");
-				break;
-			case ARMS:
-				container = document.getElementById("arms-materials-container");
-				break;
+			case SIT: container = document.getElementById("sit-materials-container"); break;
+			case BASE: container = document.getElementById("base-materials-container"); break;
+			case ARMS: container = document.getElementById("arms-materials-container"); break;
 			default: break;
 		}
 
+		// Remove "selected" class, if present, to all selectors
 		if (container.childNodes) {
-			Object.values(container.childNodes).map((child) => {
-				Object.values(child.childNodes).map((div) => {
-				if (div.nodeName == "DIV") div.className = "material-preview";
-				if (div.nodeName == "P") div.className = "material-name";
+			Object.values(container.childNodes).map((selector) => {
+				Object.values(selector.childNodes).map((element) => {
+				if (element.nodeName == "DIV") element.className = "material-preview";
+				if (element.nodeName == "P") element.className = "material-name";
 				});
 			});
 		};
+
+		// Apply "selected" class to selected element
 		div.className = "material-preview selected";
 		title.className = "material-name selected";
 	}
 
+	// Apply a material to some part
 	function changeTexture( part, material ) {
 		let newMaterial = createMaterial(
 			material.path,
@@ -533,6 +563,7 @@ $(document).ready(function() {
 		return light;
 	}
 
+	// Remove loading animation element
 	function onTransitionEnd( event ) {
 		event.preventDefault();
 		const element = event.target;
@@ -667,7 +698,7 @@ $(document).ready(function() {
 				}
 			}
 
-			// Return to default chair rotation x (0)
+			// Return to default chair rotation x
 			let rotX = chair.rotation.x;
 			if (rotX !== DEFAULT_ROTATION_X) {
 				if (rotX > DEFAULT_ROTATION_X) {
@@ -704,6 +735,7 @@ $(document).ready(function() {
 				}
 			}
 
+			// Stop centering animation if model and camera are in default positions
 			centering = !(
 				chair.rotation.y === DEFAULT_ROTATION_Y
 				&& chair.rotation.x === DEFAULT_ROTATION_X
@@ -719,9 +751,10 @@ $(document).ready(function() {
 		renderer.render( scene, camera );
 	}
 
+	// Flash effect when snapshot occours
 	function flash() {
 		$('.flash')
-		.show()  //show the hidden div
+		.show()
 		.animate({opacity: 0.5}, 300) 
 		.fadeOut(300)
 		.css({'opacity': 1});
@@ -841,7 +874,7 @@ $(document).ready(function() {
 
 		var ambientLight = new THREE.AmbientLight( 0xffffff, 0.6 );
 
-		// Copy chair
+		// AR chair
 		var chairAR = chair.clone();
 		chairAR.rotation.x = 0;
 		chairAR.rotation.y = 0;
@@ -849,7 +882,7 @@ $(document).ready(function() {
 		chairAR.castShadow = true;
 
 		/*
-		// Copy ground
+		// Ground for simulate shadows
 		var shadowMaterial = new THREE.ShadowMaterial();
 		shadowMaterial.opacity = 0.5;
 		var groundAR = new THREE.Mesh(ground.geometry, shadowMaterial);
@@ -922,14 +955,18 @@ $(document).ready(function() {
 		return myMat;
 	}
 
+	// Creates a custom confirmBox - not the browser's one
 	function confirmBox(title, message, okText, cancelText, onOk) {
 
+		// Container element
 		let container = document.getElementById('confirm-container');
 		container.style.display = "block";
 
+		// Title and message elements
 		let titleText = document.getElementById('confirm-title');
 		let messageText = document.getElementById('confirm-message');
 
+		// Apply user callback funcion at ok button, if defined, and hide on confirm
 		let okButton = document.getElementById('confirm-ok-button');
 		okButton.onclick = () => {
 			hideConfirm();
@@ -937,9 +974,11 @@ $(document).ready(function() {
 			return true;
 		}
 
+		// Apply hide on cancel
 		let cancelButton = document.getElementById('confirm-cancel-button');
 		cancelButton.onclick = () => { hideConfirm(); return false; }
 
+		// Set text values if defined, else set defalut values
 		titleText.innerText = (title) ? title : "Confirm";
 		messageText.innerText = (message) ? message : "";
 		okButton.innerText = (okText) ? okText : "Ok";
@@ -947,6 +986,7 @@ $(document).ready(function() {
 
 		window.addEventListener('keydown', keyControls, false);
 
+		// Define key focus for the confirm buttons (accessibility)
 		function keyControls(event) {
 			console.log(event.keyCode);
 			switch (event.keyCode) {
@@ -961,6 +1001,8 @@ $(document).ready(function() {
 			}
 		}
 
+		// Remove all listeners and hide container
+		// TODO: better delete it from DOM
 		function hideConfirm() {
 			window.removeEventListener('keydown', keyControls, false);
 			container.style.display = "none";

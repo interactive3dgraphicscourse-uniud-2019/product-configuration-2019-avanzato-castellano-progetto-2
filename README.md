@@ -40,6 +40,17 @@ Progetto di Avanzato Thomas e Castellano Astrid
 12. Individuazione della BRDF utilizzata nel codice sorgente di Three.js e riscrittura della stessa in forma matematica.
 
 
+## Struttura del progetto
+
+- Il file principale è "**configuratorAR.html**" e contiene l'intero progetto.
+- **configuratorAR.js** è lo script di riferimento.
+- **configurator-styleAR.css** contiene tutte le regole grafiche.
+- Nella cartella **icons** sono presenti le immagini usate come icone o per bottoni.
+- Nella cartella **js** è presente il codice sorgente di three.js, jQuery, JsARToolkit ed il suo marker in formato png.
+- In "**obj**" è presente il modello 3D utilizzato, in formato obj (privo di materiali).
+- La cartella **screenshots** contiene le varie catture di schermata fatte durante le varie fasi del progetto.
+
+
 ## Modello 3D
 
 Abbiamo utilizzato un modello 3D di una sedia disegnata da [Moroso](<https://moroso.it>) e gentilmente ceduta per uso accademico (si prega quindi di non scaricare ed utilizzare in nessun modo il modello).
@@ -144,11 +155,12 @@ Augmented reality
 - **Javascript** per le funzionalità come ascoltatori di eventi, creazione di elementi dinamici nel DOM, possibilità di scaricare il frame "fotografato".
 - **Three.js** per la parte 3D.
 - **JsARToolkit** per il tracking del marker nella realtà aumentata.
+- **JQuery** per l'animazione di flash della fotografia (evitando così di scrivere molto codice javascript).
 
 ## Problemi riscontrati
 1. La centratura del modello si comporta in modo inaspettato per alcune rotazioni (negative minori di -PI).
 
-	- **Motivo**: il valore di rotazione di un oggetto in Three.js è espresso in float, e può essere positivo o negativo. Per cui, ad una stessa rotazione possono corrispondere più valori diversi (ad esempio 90 gradi sono anche -270 gradi).
+	- **Motivo**: il valore di rotazione di un oggetto attorno ad un asse, in Three.js, è espresso con un float, e può essere positivo o negativo. Per cui, ad una stessa rotazione, possono corrispondere valori diversi (ad esempio 90deg = -270deg = 450deg = ...).
 
 	- **Causa**: impostazione errata dei controlli sui valori di rotazione. Ho cercato di modulare il valore di rotazione nell'intervallo [-PI, PI], ma in alcuni casi si eccede da tale range (problema ancora da risolvere).
 
@@ -164,3 +176,6 @@ Augmented reality
 		Ciò è necessario se voglio scattare una istantanea mentre sto configurando, e lo posso fare solo evitando di scartare i frame una volta visualizzati.
 	
 	- **Possibile soluzione**: trovare un meccanismo per svuotare periodicamente il buffer del renderer (da verificare).
+
+
+## Conclusioni
