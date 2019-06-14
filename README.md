@@ -73,7 +73,7 @@ Le luci, di tipo spotlight, sono state posizionate nel seguente modo:
 ![disposizione luci](screenshots/luci.png)
 
 Sono tutte di colore bianco, con un'intensità pari ad 1.
-Abbiamo inserito anche una luce ambientale, di intensità 0.6 (debole), per riempire le zone rimaste in ombra ed illuminare globalmente di più il nostro oggetto.
+Abbiamo inserito anche una luce ambientale, di intensità 0.7 (debole), per riempire le zone rimaste in ombra ed illuminare globalmente di più il nostro oggetto.
 
 ## BRDF utilizzata
 
