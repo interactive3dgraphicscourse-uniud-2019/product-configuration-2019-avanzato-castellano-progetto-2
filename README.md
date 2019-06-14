@@ -75,13 +75,14 @@ Le luci, di tipo spotlight, sono state posizionate nel seguente modo:
 Sono tutte di colore bianco, con un'intensità pari ad 1.
 Abbiamo inserito anche una luce ambientale, di intensità 0.6 (debole), per riempire le zone rimaste in ombra ed illuminare globalmente di più il nostro oggetto.
 
-## Materiali
+## BRDF utilizzata
 
 Per questo progetto è stato usato il materiale [MeshStandardMaterial](<http://www.inf.u-szeged.hu/~tanacs/threejs/docs/#api/en/materials/MeshStandardMaterial>) di Three.js, di cui riportiamo la funzione BRDF, sia in forma matematica che algoritmica presente nel codice sorgente.
-Formalmente:
+
+**Formalmente:**
 ![BRDF](screenshots/BRDF.JPG)
 
-Nel codice sorgente:
+**Nel codice sorgente:**
 ```javascript
 #define EPSILON 1e-6;
 #define RECIPROCAL_PI 0.31830988618;
@@ -144,7 +145,11 @@ vec3 BRDF_Specular_GGX( const in IncidentLight incidentLight, const in Geometric
 }
 ```
 
-Le textures utilizzate per i vari materiali (per comodità solo le componenti diffusive).
+
+## Textures PBR
+
+Sono state prese dal sito [cc0 textures](<https://cc0textures.com/>) e scelte in base al modello a cui applicarle.
+Le textures utilizzate per i vari materiali (per comodità solo le componenti diffusive) sono le seguenti:
 
 Tessuti
 
