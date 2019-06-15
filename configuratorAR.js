@@ -56,7 +56,7 @@ $(document).ready(function() {
 	// Materials available for the base
 	const basePreviews = {
 		metal01: { name: "regular dark metal", image: "textures/metal01/diff.jpg" },
-		metal02: { name: "grey flat metal", image: "textures/metal02/diff.jpg" },
+		metal02: { name: "flat grey metal", image: "textures/metal02/diff.jpg" },
 		metal03: { name: "striped grey metal", image: "textures/metal03/diff.jpg" },
 		wood01: { name: "refined redwood", image: "textures/wood01/diff.jpg" },
 		wood02: { name: "flat polar wood", image: "textures/wood02/diff.jpg" },
@@ -65,7 +65,7 @@ $(document).ready(function() {
 	// Materials available for the arms
 	const armsPreviews = {
 		metal01: { name: "regular dark metal", image: "textures/metal01/diff.jpg" },
-		metal02: { name: "grey flat metal", image: "textures/metal02/diff.jpg" },
+		metal02: { name: "flat grey metal", image: "textures/metal02/diff.jpg" },
 		metal03: { name: "striped grey metal", image: "textures/metal03/diff.jpg" },
 		wood01: { name: "refined redwood", image: "textures/wood01/diff.jpg" },
 		wood02: { name: "flat polar wood", image: "textures/wood02/diff.jpg" },
@@ -79,9 +79,9 @@ $(document).ready(function() {
 		fabric03: { path: "textures/fabric03/", type: "fabric", repetitions: 16 },
 		fabric04: { path: "textures/fabric04/", type: "fabric", repetitions: 16 },
 		fabric05: { path: "textures/fabric05/", type: "fabric", repetitions: 2 },
-		leather01: { path: "textures/leather01/", type: "leather", repetitions: 16 },
+		leather01: { path: "textures/leather01/", type: "leather", repetitions: 4 },
 		leather02: { path: "textures/leather02/", type: "leather", repetitions: 16 },
-		metal01: { path: "textures/metal01/", type: "metal", repetitions: 0.5 },
+		metal01: { path: "textures/metal01/", type: "metal", repetitions: 0.02 },
 		metal02: { path: "textures/metal02/", type: "metal", repetitions: 0.02 },
 		metal03: { path: "textures/metal03/", type: "metal", repetitions: 0.05 },
 		wood01: { path: "textures/wood01/", type: "wood", repetitions: 0.02 },
@@ -165,7 +165,7 @@ $(document).ready(function() {
 		var spotLight3 = createSpotlight( 0xffffff, 1, false );
 		spotLight3.position.set( -40, 80, 50 );
 
-		var ambientLight = new THREE.AmbientLight( 0xffffff, 0.6 );
+		var ambientLight = new THREE.AmbientLight( 0xffffff, 0.7 );
 		scene.add( ambientLight );
 
 		// Ground
