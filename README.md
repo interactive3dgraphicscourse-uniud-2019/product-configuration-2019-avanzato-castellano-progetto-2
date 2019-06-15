@@ -49,6 +49,7 @@ Progetto di Avanzato Thomas e Castellano Astrid
 - Nella cartella **js** è presente il codice sorgente di three.js, jQuery, JsARToolkit ed il suo marker in formato png.
 - In "**obj**" è presente il modello 3D utilizzato, in formato obj (privo di materiali).
 - La cartella **screenshots** contiene le varie catture di schermata fatte durante le varie fasi del progetto.
+- In "**textures**" sono presenti tutti i materiali.
 
 
 ## Modello 3D
@@ -253,3 +254,21 @@ Augmented reality
 
 
 ## Conclusioni
+
+### Adattabilità
+Idealmente, abbiamo cercato di costruire un configuratore semplice ed essenziale, che possa essere integrato in qualsiasi sito web pre-esistente in vari modi:
+- Inserendolo in un frame (o iframe) all'interno di una pagina.
+- Utilizzandolo come finestra full screen temporanea (che svanisca una volta confermata la configurazione o effettuato l'acquisto).
+- Utilizzandolo come pagina di passaggio: **selezione prodotto** -> **configurazione** -> **conferma pagamento**
+
+La scelta di colori neutri ed assenza di immagini di sfondo aiuta a dare l'aspetto di un prodotto generico, quindi non appartenente ad una categoria di utente e di mercato ben precise.
+Grazie a queste scelte il configuratore si adatta a diverse grafiche e colori senza contrastare troppo.
+
+### Modello
+Purtroppo il modello fornitoci è abbastanza elaborato e computazionalmente pesante. Le prestazioni su un dispositivo medio (PC o portatile) sono comunque buone (60fps).
+Su dispositivi datati o alcuni smartphone però si potrebbe scendere sotto i 20-30fps dando risultati poco professionali.
+
+### Progetto
+Il progetto è un'opportunità per applicare quanto studiato ed appreso, ma in un'ottica professionale.
+Ci ha dato modo di comparare il nostro lavoro con sistemi già esistenti, aiutandoci a capire in quale direzione continuare la pratica e lo studio della materia.
+E' stato di stimolo alla creatività, ma anche all'immedesimazione nell'utente per comprendere le possibili esigenze, e cercare di soddisfarle.

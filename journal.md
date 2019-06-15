@@ -79,3 +79,14 @@
 
 - Individuato il codice che definisce la BRDF.
 - Riscrittura dello stesso in linguaggio matematico e non algoritmico.
+- Inizio stesura della relazione
+- Submit alla cartella di progetto su Github.
+
+## 2019-06-14
+
+- Proseguimento della relazione, generazione di immagini da utilizzare in essa (screenshots).
+- Aggiunta dei files alla cartella madre del progetto (Github).
+
+## 2019-06-15
+
+- Ultimi ritocchi alla relazione.
