@@ -71,20 +71,30 @@ Dettagli del modello:
 ## Luci
 
 Le luci, di tipo spotlight, sono state posizionate nel seguente modo:
-
-![disposizione luci](screenshots/Lights.png)
+![disposizione luci](screenshots/luci.png)
 
 Sono tutte di colore bianco, con un'intensità pari ad 1.
-Abbiamo inserito anche una luce ambientale, di intensità 0.7 (debole), per riempire le zone rimaste in ombra ed illuminare globalmente di più il nostro oggetto.
+Abbiamo inserito anche una luce ambientale, di intensità 0.6 (debole), per riempire le zone rimaste in ombra ed illuminare globalmente di più il nostro oggetto.
 
 ## BRDF utilizzata
 
 Per questo progetto è stato usato il materiale [MeshStandardMaterial](<http://www.inf.u-szeged.hu/~tanacs/threejs/docs/#api/en/materials/MeshStandardMaterial>) di Three.js, di cui riportiamo la funzione BRDF, sia in forma matematica che algoritmica presente nel codice sorgente.
 
-**Formalmente:**
-![BRDF](screenshots/BRDF.JPG)
+###Formalmente
 
-**Nel codice sorgente:**
+**BRDF**
+![BRDF](screenshots/BRDF_Specular.JPG)
+
+**F**
+![F_Schlick](screenshots/F_Schlick.JPG)
+
+**G**
+![G_GGX](screenshots/G_GGX.JPG)
+
+**D**
+![D_GGX](screenshots/D_GGX.JPG)
+
+###Nel codice sorgente
 ```javascript
 #define EPSILON 1e-6;
 #define RECIPROCAL_PI 0.31830988618;
