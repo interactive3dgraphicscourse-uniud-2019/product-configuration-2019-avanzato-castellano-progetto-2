@@ -71,6 +71,7 @@ Dettagli del modello:
 ## Luci
 
 Le luci, di tipo spotlight, sono state posizionate nel seguente modo:
+
 ![disposizione luci](screenshots/Lights.png)
 
 Sono tutte di colore bianco, con un'intensità pari ad 1.
