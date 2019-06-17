@@ -80,7 +80,7 @@ Abbiamo inserito anche una luce ambientale, di intensità 0.6 (debole), per riem
 
 Per questo progetto è stato usato il materiale [MeshStandardMaterial](<http://www.inf.u-szeged.hu/~tanacs/threejs/docs/#api/en/materials/MeshStandardMaterial>) di Three.js, di cui riportiamo la funzione BRDF, sia in forma matematica che algoritmica presente nel codice sorgente.
 
-###Formalmente
+**Formalmente**
 
 **BRDF**
 ![BRDF](screenshots/BRDF_Specular.JPG)
@@ -94,7 +94,7 @@ Per questo progetto è stato usato il materiale [MeshStandardMaterial](<http://w
 **D**
 ![D_GGX](screenshots/D_GGX.JPG)
 
-###Nel codice sorgente
+**Nel codice sorgente**
 ```javascript
 #define EPSILON 1e-6;
 #define RECIPROCAL_PI 0.31830988618;
